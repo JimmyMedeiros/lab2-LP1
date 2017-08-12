@@ -16,7 +16,7 @@ debug: CPPFLAGS += -g -O0
 debug: questao03
 
 ####	Questão 02		####
-questao02: $(OBJ_DIR)/main2.o
+questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/primalidade.o $(OBJ_DIR)/fatorial.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -25,7 +25,10 @@ questao02: $(OBJ_DIR)/main2.o
 	@echo "============="
 $(OBJ_DIR)/main2.o: $(SRC_DIR)/questao02/main2.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
-
+$(OBJ_DIR)/primalidade.o: $(SRC_DIR)/questao02/primalidade.cpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+$(OBJ_DIR)/fatorial.o: $(SRC_DIR)/questao02/fatorial.cpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 ####	Questão 03		####
 # Define os arquivos classe31.o e main3.o como dependências.
