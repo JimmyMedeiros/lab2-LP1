@@ -1,10 +1,10 @@
 #ifndef AREA_H
 #define AREA_H
 
-float area_triangulo_equilatero (float lado);
+float area_of_tri (int base, int height);
 
-float area_retangulo (float base, float altura);
+int area_of_rect (int base, int height);
 
-float area_quadrado (float lado);
+int area_of_sqr (int side);
 
 #endif

@@ -15,6 +15,26 @@ TEST_DIR=./test
 debug: CPPFLAGS += -g -O0
 debug: questao03
 
+all: questao01 questao02 questao03
+
+####	Questão 01		####
+questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o
+	@echo "============="
+	@echo "Ligando o alvo $@"
+	@echo "============="
+	$(CC) $(CPPFLAGS) -o $(BIN_DIR)/$@ $^
+	@echo "+++ [Executavel questao02 criado em $(BIN_DIR)] +++"
+	@echo "============="
+
+$(OBJ_DIR)/main1.o: $(SRC_DIR)/questao01/main1.cpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+$(OBJ_DIR)/calcula.o: $(SRC_DIR)/questao01/calcula.cpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+$(OBJ_DIR)/area.o: $(SRC_DIR)/questao01/area.cpp
+	$(CC) -c $(CPPFLAGS) -o $@ $< -lm
+
 ####	Questão 02		####
 questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/primalidade.o $(OBJ_DIR)/fatorial.o
 	@echo "============="
