@@ -18,7 +18,7 @@ debug: questao03
 all: questao01 questao02 questao03
 
 ####	Questão 01		####
-questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o
+questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -33,6 +33,9 @@ $(OBJ_DIR)/calcula.o: $(SRC_DIR)/questao01/calcula.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 $(OBJ_DIR)/area.o: $(SRC_DIR)/questao01/area.cpp
+	$(CC) -c $(CPPFLAGS) -o $@ $< -lm
+
+$(OBJ_DIR)/perimetro.o: $(SRC_DIR)/questao01/perimetro.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $< -lm
 
 ####	Questão 02		####

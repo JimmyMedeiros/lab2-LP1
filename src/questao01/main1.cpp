@@ -36,8 +36,23 @@ int main(int argc, char const *argv[]){
 				break;
 			case 3:
 				calcula_quadrado();
+				break;
+			case 4:
+				calcula_circulo();
+				break;
+			case 5:
+				//calcula_piramide();
+				break;
+			case 6:
+				//calcula_cubo();
+				break;
+			case 7:
+				//calcula_paralelepipedo();
+				break;
+			case 8:
+				//calcula_esfera();
+				break;
 			default:
-				std::cout << "\nOpção inválida. Por favor, digite uma opção válida\n\n";
 				break;
 		}
 	}
