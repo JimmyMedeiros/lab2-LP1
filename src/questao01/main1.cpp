@@ -41,16 +41,16 @@ int main(int argc, char const *argv[]){
 				calcula_circulo();
 				break;
 			case 5:
-				//calcula_piramide();
+				calcula_piramide();
 				break;
 			case 6:
-				//calcula_cubo();
+				calcula_cubo();
 				break;
 			case 7:
-				//calcula_paralelepipedo();
+				calcula_paralelepipedo();
 				break;
 			case 8:
-				//calcula_esfera();
+				calcula_esfera();
 				break;
 			default:
 				break;
