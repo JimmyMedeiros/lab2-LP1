@@ -1,12 +1,12 @@
 #ifndef AREA_H
 #define AREA_H
 
-float area_of_tri (int side);
+float area_of_tri (unsigned int side);
 
-int area_of_rect (int base, int height);
+unsigned int area_of_rect (unsigned int base, unsigned int height);
 
-int area_of_sqr (int side);
+unsigned int area_of_sqr (unsigned int side);
 
-float area_of_circle (int radius);
+float area_of_circle (unsigned int radius);
 
 #endif

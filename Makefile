@@ -11,11 +11,13 @@ BIN_DIR=./bin
 DOC_DIR=./doc
 TEST_DIR=./test
 
+.PHONY: all clean distclean doxy
+
+all: questao01 questao02 questao03
+
 # Opção para depurar (só a questão 03)
 debug: CPPFLAGS += -g -O0
 debug: questao03
-
-all: questao01 questao02 questao03
 
 ####	Questão 01		####
 questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o $(OBJ_DIR)/volume.o
@@ -68,6 +70,12 @@ questao03: $(OBJ_DIR)/main3.o
 
 $(OBJ_DIR)/main3.o: $(SRC_DIR)/questao03/main3.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+# Alvo (target) para a geração automatica de documentacao usando o Doxygen.
+# Sempre remove a documentacao anterior (caso exista) e gera uma nova.
+doxy:
+	$(RM) $(DOC_DIR)/*
+	doxygen Doxyfile
 
 # Limpar os arquivos objetos e executáveis
 clean:
