@@ -14,7 +14,7 @@ Cria a questãon sendo n o número da questão que pode ser: 01, 02 ou 03
 - make debug
 Cria sa questões em modo de depuração
 - make doxy
-Cria na pasta doc a documentação em html
+Cria a documentação em html
 - make clean
 Apaga os arquivos das bastas bin e build
 
