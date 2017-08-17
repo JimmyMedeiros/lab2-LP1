@@ -1,6 +1,6 @@
 # Cria os diretórios necessários
 dir:
-	mkdir bin build
+	mkdir -p bin build
 
 CC = g++
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11
@@ -17,14 +17,14 @@ TEST_DIR=./test
 
 .PHONY: all clean distclean doxy
 
-all: questao01 questao02 questao03
+all: dir questao01 questao02 questao03
 
 # Opção para depurar (só a questão 03)
 debug: CPPFLAGS += -g -O0
 debug: questao03 questao02 questao03
 
 ####	Questão 01		####
-questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o $(OBJ_DIR)/volume.o
+questao01: dir $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o $(OBJ_DIR)/volume.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -48,7 +48,7 @@ $(OBJ_DIR)/volume.o: $(SRC_DIR)/questao01/volume.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $< -lm
 
 ####	Questão 02		####
-questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/primalidade.o $(OBJ_DIR)/fatorial.o
+questao02: dir $(OBJ_DIR)/main2.o $(OBJ_DIR)/primalidade.o $(OBJ_DIR)/fatorial.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -64,7 +64,7 @@ $(OBJ_DIR)/fatorial.o: $(SRC_DIR)/questao02/fatorial.cpp
 
 ####	Questão 03		####
 # Define os arquivos classe31.o e main3.o como dependências.
-questao03: $(OBJ_DIR)/main3.o
+questao03: dir $(OBJ_DIR)/main3.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -82,7 +82,7 @@ doxy:
 	doxygen Doxyfile
 
 # Limpar os arquivos objetos e executáveis
-clean:
+clean: dir
 	$(RM) $(BIN_DIR)/*
 	$(RM) $(OBJ_DIR)/*
 

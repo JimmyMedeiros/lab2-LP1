@@ -1,6 +1,6 @@
 # Cria os diretórios necessários
 dir:
-	mkdir bin build
+	mkdir -p bin build
 
 CC = g++
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11
@@ -17,11 +17,11 @@ TEST_DIR=./test
 
 .PHONY: all clean distclean doxy
 
-all: questao01 questao02 questao03
+all: dir questao01 questao02 questao03
 
 # Opção para depurar (só a questão 03)
 debug: CPPFLAGS += -g -O0
-debug: questao03
+debug: questao03 questao02 questao03
 
 ####	Questão 01		####
 questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o $(OBJ_DIR)/volume.o

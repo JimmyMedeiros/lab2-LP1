@@ -5,8 +5,6 @@ by: Josivan Medeiros
 Primeiro laboratório da disciplina de Linguagem de Programação 1 do curso de Tecnologia da Informação. O exercício consiste em três programas em C++ (questao01, questao02 e  questao03). O objetivo é por em prática conhecimentos de controle de versão, modularização, depuração, entre outras boas práticas de programação. Cada um dos 3 programas executam uma tarefa diferente e devem ser compilados com um arquivo Makefile.
 
 ## Intruções de Compição:
-- make dir:<br>
-É necessário para criar as pastas bin e build que são necessárias para a compilação
 - make all:<br>
 Cria todas as questões
 - make questaon:<br>
