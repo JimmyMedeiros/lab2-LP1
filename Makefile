@@ -3,7 +3,7 @@ dir:
 	mkdir -p bin build
 
 CC = g++
-CPPFLAGS = -Wall -pedantic -ansi -std=c++11
+CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -pg
 RM = rm -rf
 
 # Variaveis para os subdiretorios
@@ -24,7 +24,7 @@ debug: CPPFLAGS += -g -O0
 debug: questao03 questao02 questao03
 
 ####	Questão 01		####
-questao01: dir $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o $(OBJ_DIR)/volume.o
+questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/calcula.o $(OBJ_DIR)/area.o $(OBJ_DIR)/perimetro.o $(OBJ_DIR)/volume.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -48,11 +48,11 @@ $(OBJ_DIR)/volume.o: $(SRC_DIR)/questao01/volume.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $< -lm
 
 ####	Questão 02		####
-questao02: dir $(OBJ_DIR)/main2.o $(OBJ_DIR)/primalidade.o $(OBJ_DIR)/fatorial.o
+questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/primalidade.o $(OBJ_DIR)/fatorial.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
-	$(CC) $(CPPFLAGS) -pg -o $(BIN_DIR)/anterior $^
+	$(CC) $(CPPFLAGS) -o $(BIN_DIR)/anterior $^
 	@echo "+++ [Executavel questao02 criado em $(BIN_DIR)] +++"
 	@echo "============="
 $(OBJ_DIR)/main2.o: $(SRC_DIR)/questao02/main2.cpp
@@ -64,7 +64,7 @@ $(OBJ_DIR)/fatorial.o: $(SRC_DIR)/questao02/fatorial.cpp
 
 ####	Questão 03		####
 # Define os arquivos classe31.o e main3.o como dependências.
-questao03: dir $(OBJ_DIR)/main3.o
+questao03: $(OBJ_DIR)/main3.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
