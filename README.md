@@ -1,14 +1,14 @@
 #### Universidade Federal do Rio Grande do Norte <br> Instituito Metrópole Digital
 by: Josivan Medeiros
 
-# Laboratório 1 - LP1
-Primeiro laboratório da disciplina de Linguagem de Programação 1 do curso de Tecnologia da Informação. O exercício consiste em três programas em C++ (questao01, questao02 e  questao03). O objetivo é por em prática conhecimentos de controle de versão, modularização, depuração, entre outras boas práticas de programação. Cada um dos 3 programas executam uma tarefa diferente e devem ser compilados com um arquivo Makefile.
+# Laboratório 2 - LP1
+Segundo laboratório da disciplina de Linguagem de Programação 1 do curso de Tecnologia da Informação. O exercício consiste em dois programas em C++ (questao01 e questao02). O objetivo é por em prática conhecimentos ...
 
 ## Intruções de Compição:
 - make all:<br>
 Cria todas as questões
 - make questaon:<br>
-Cria a questãon sendo n o número da questão que pode ser: 01, 02 ou 03
+Cria a questãon sendo n o número da questão que pode ser: 01 ou 02
 - make debug:<BR>
 Cria sa questões em modo de depuração
 - make doxy:<BR>
@@ -17,11 +17,6 @@ Cria na pasta doc a documentação em html
 Apaga os arquivos das bastas bin e build
 
 ### Questão 01
-Esse programa exibe 8 opções de figuras geométricas e recebe os seguintes dados: a opção com o número da figura (ou 0 para sair do programa) e as medidas da figura (varia de acordo com cada figura). A saída são: área e perímetro, para figuras planas, ou área e volume, para figuras espaciais.
+...
 ### Questão 02
-Esse programa lê um número inteiro, calcula o seu fatorial e retorna o maior número primo menor do que esse valor. O programa ao ser compilado deverá gerar um executável chamado "anterior". Além disso:
-- O número deve ser lido pela linha de comando
-- Deve ser implementado de forma modular, com um arquivo fatorial.h/cpp e primalidade.h/cpp e compilado com Makefile
-- As funções de fatorial e primalidade devem ser recursivas
-### Questão 03
-Um exercício de depuração.
+...
