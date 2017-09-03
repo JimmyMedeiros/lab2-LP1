@@ -21,7 +21,7 @@ dir:
 
 # Opção para depurar (só a questão 03)
 debug: CPPFLAGS += -g -O0
-debug: questao03 questao02
+debug: questao01 questao02
 
 ####	Questão 01		####
 questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/company.o $(OBJ_DIR)/employee.o
@@ -46,7 +46,7 @@ questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/dado.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
-	$(CC) $(CPPFLAGS) -o $(BIN_DIR)/anterior $^
+	$(CC) $(CPPFLAGS) -o $(BIN_DIR)/$@ $^
 	@echo "+++ [Executavel questao02 criado em $(BIN_DIR)] +++"
 	@echo "============="
 $(OBJ_DIR)/main2.o: $(SRC_DIR)/questao02/main2.cpp

@@ -15,7 +15,7 @@ public:
 
 	Dado();
 	Dado(int val);
-	~Dado();
+	
 	friend std::ostream& operator<< (std::ostream &o, Dado const &d);
 	int jogar();
 	int getValor();

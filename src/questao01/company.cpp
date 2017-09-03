@@ -11,13 +11,9 @@
 * @return TODO
 */
 
-class company
-{
-private:
-/** TODO **/
-public:
-	company(){
-		/** TODO **/;
-	}
-	~company();
-};
+Company::Company(){
+	/** TODO **/;
+}
+Company::~Company(){
+	/** TODO **/;
+}

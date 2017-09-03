@@ -5,7 +5,7 @@
 #include <iostream>
 
 std::random_device Dado::rd{};
-std::mt19937 Dado::gen(Dado rd());
+std::mt19937 Dado::gen(Dado::rd());
 std::uniform_int_distribution<> Dado::dis(1,6);
 
 Dado::Dado(){

@@ -10,14 +10,10 @@
 * @param side Um valor inteiro positivo, o tamanho do lado do triângulo
 * @return Um valor float com a área do triângulo
 */
-class employee
-{
-private:
-	/** TODO **/
-public:
-	employee(){
-		/** TODO **/;
-	}
-	~employee();
-	
-};
+Employee::Employee(){
+	/** TODO **/;
+}
+
+Employee::~Employee(){
+	/** TODO **/;
+}
