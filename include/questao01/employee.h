@@ -5,11 +5,13 @@
 
 class Employee
 {
+public:
 	std::string name;
 	std::string admission_date;
-public:
+	static int total;
 	int CPF;
 	float wage;
+/** Methods **/
 	Employee();
 	~Employee();
 };
