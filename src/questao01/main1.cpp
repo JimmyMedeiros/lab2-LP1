@@ -72,7 +72,8 @@ int main(int argc, char const *argv[])
 				}
 				else
 				{
-					std::cout << "Escolha uma empresa para cadastrar o funcionário\n";
+					cout << "==== Cadastrando funcionário ====" <<
+					"\nEscolha uma empresa para cadastrar o funcionário\n";
 					/** TODO **/
 					Employee *empregado = new Employee();
 					//empregado->wage = 937.00;
@@ -86,10 +87,29 @@ int main(int argc, char const *argv[])
 					cin >> opt2;
 					if (not error_handler(opt2))
 					{
+						cin >> (*empregado);
 						empresas.at(opt2)->employees.push_back(empregado);
 					}
 				}
 				break;
+			case 3:
+			{
+				int j = 0;
+				int opt2;
+				cout << "Escolha qual empresa você quer listar os funcionários\n";
+				for (it = empresas.begin() ; it != empresas.end(); ++it)
+				{
+					cout << "(" << j << ")" << (empresas.at(j))->name << endl;
+					j++;
+				}
+				cin >> opt2;
+				cout << "= Lista de funcionários: " << endl;
+				vector<Employee*>::iterator it2 = (empresas.at(opt2))->employees.begin();
+				for (; it2 != empresas.at(opt2)->employees.end(); ++it2)
+				{
+					cout << "- " << (*it2)->name << endl;
+				}
+			}
 			default:
 				break;
 		}

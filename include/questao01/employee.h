@@ -8,12 +8,15 @@ class Employee
 public:
 	std::string name;
 	std::string admission_date;
-	static int total;
 	int CPF;
 	float wage;
+	static int total;
 /** Methods **/
 	Employee();
 	~Employee();
+
+/** Operators **/
+	friend std::istream& operator>> (std::istream &i, Employee &c);
 };
 
 #endif

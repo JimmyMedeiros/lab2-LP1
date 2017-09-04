@@ -1,6 +1,7 @@
 /**
  * @file employee.cpp
  */
+#include <iostream>
 #include <string>
 
 #include "../../include/questao01/employee.h"
@@ -16,8 +17,18 @@ Employee::Employee(){
 	/** TODO **/
 	total++;
 }
-
 Employee::~Employee(){
 	/** TODO **/
 	total--;
+}
+std::istream &operator>> (std::istream &i, Employee &e) {
+	std::cout << "Digite o CPF do funcionário:\n";
+	i >> e.CPF;
+	std::cout << "Digite o nome do funcionário:\n";
+	i >> e.name;
+	std::cout << "Digite a data de admissão:\n";
+	i >> e.admission_date;
+	std::cout << "Digite o salário do funcionário:\n";
+	i >> e.wage;
+	return i;
 }
