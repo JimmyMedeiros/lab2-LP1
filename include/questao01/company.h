@@ -10,6 +10,7 @@
 class Company
 {
 private:
+	int ID;
 public:
 	int CNPJ;
 	std::string name;
@@ -18,9 +19,10 @@ public:
 /** Methods **/
 	Company();
 	~Company();
-	give_raise(float tax);
-	/** Getters and Setters 
-	getName();
+	void give_raise(float tax);
+	/** Getters and Setters**/ 
+	int getID();
+	/**getName();
 	setName();**/
 /** Operators **/
 	friend std::istream& operator>> (std::istream &i, Company &c);

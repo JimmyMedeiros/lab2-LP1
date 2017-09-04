@@ -22,13 +22,20 @@ Employee::~Employee(){
 	total--;
 }
 std::istream &operator>> (std::istream &i, Employee &e) {
-	std::cout << "Digite o CPF do funcionário:\n";
-	i >> e.CPF;
 	std::cout << "Digite o nome do funcionário:\n";
 	i >> e.name;
+	std::cout << "Digite o CPF do funcionário:\n";
+	i >> e.CPF;
 	std::cout << "Digite a data de admissão:\n";
 	i >> e.admission_date;
 	std::cout << "Digite o salário do funcionário:\n";
 	i >> e.wage;
 	return i;
+}
+std::ostream& operator<< (std::ostream &o, Employee &e){
+	o << "Nome: " << e.name;
+	o << "\nCPF: " << e.CPF;
+	o << "\nData de admissão: " << e.admission_date;
+	o << "\nSalário: " << e.wage << "\n";
+	return o;
 }

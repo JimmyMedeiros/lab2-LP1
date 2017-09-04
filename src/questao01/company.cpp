@@ -19,14 +19,20 @@ Company::Company(){
 }
 Company::~Company(){
 	/** TODO **/
+	this->ID = total;
 	total--;
 }
-Company::void give_raise(float tax){
-	for (std::vector<Employee*>::iterator it = .begin(); it != .end(); ++it)
+void Company::give_raise(float tax){
+	for (std::vector<Employee*>::iterator it = this->employees.begin(); it != this->employees.end(); ++it)
 	{
-		it->wage *= (tax +1); 
+		(*it)->wage *= (tax +1); 
 	}
 }
+/** Getters and Setters **/
+int Company::getID(){
+	return this->ID;
+}
+/** Operadores **/
 std::istream &operator>> (std::istream &i, Company &c) {
 	std::cout << "Digite o CNPJ da empresa:\n";
 	i >> c.CNPJ;

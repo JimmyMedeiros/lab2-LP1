@@ -16,7 +16,8 @@ public:
 	~Employee();
 
 /** Operators **/
-	friend std::istream& operator>> (std::istream &i, Employee &c);
+	friend std::istream& operator>> (std::istream &i, Employee &e);
+	friend std::ostream& operator<< (std::ostream &o, Employee &e);
 };
 
 #endif

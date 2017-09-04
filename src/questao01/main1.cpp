@@ -49,6 +49,8 @@ int main(int argc, char const *argv[])
 		<< "(1) Criar empresa\n"
 		<< "(2) Adicionar funcionário\n"
 		<< "(3) Listar funcionários de uma empresa\n"
+		<< "(4) Dar aumento a funcionários\n"
+		<< "(5) Listar funcionários em experiência\n"
 		<< "(0) Sair\n"
 		<< "Digite a sua opção: \n";
 		std::cin >> opt;
@@ -93,23 +95,39 @@ int main(int argc, char const *argv[])
 				}
 				break;
 			case 3:
-			{
-				int j = 0;
-				int opt2;
-				cout << "Escolha qual empresa você quer listar os funcionários\n";
-				for (it = empresas.begin() ; it != empresas.end(); ++it)
 				{
-					cout << "(" << j << ")" << (empresas.at(j))->name << endl;
-					j++;
+					int j = 0;
+					int opt2;
+					cout << "Escolha qual empresa você quer listar os funcionários\n";
+					for (it = empresas.begin() ; it != empresas.end(); ++it)
+					{
+						cout << "(" << (empresas.at(j))->getID() << ")" << (empresas.at(j))->name << endl;
+						j++;
+					}
+					cin >> opt2;
+					cout << "= Lista de funcionários: " << endl;
+					vector<Employee*>::iterator it2 = (empresas.at(opt2))->employees.begin();
+					for (; it2 != empresas.at(opt2)->employees.end(); ++it2)
+					{
+						cout << (*(*it2)) << endl;
+					}
 				}
-				cin >> opt2;
-				cout << "= Lista de funcionários: " << endl;
-				vector<Employee*>::iterator it2 = (empresas.at(opt2))->employees.begin();
-				for (; it2 != empresas.at(opt2)->employees.end(); ++it2)
+				break;
+			case 4:
 				{
-					cout << "- " << (*it2)->name << endl;
+					float aumento;
+					int opt2, j = 0;
+					cout << "Escolha em qual empresa você quer dar o aumento:\n";
+					for (it = empresas.begin() ; it != empresas.end(); ++it)
+					{
+						cout << "(" << j << ")" << (empresas.at(j))->name << endl;
+						j++;
+					}
+					cin >> opt2;
+					cout << "Digite a porcentagem do aumento.\n(Digite um valor decimal, por exemplo, se o aumento é de 50%% digite \"0.5\"\n";
+					cin >> aumento;
+					(empresas.at(opt2))->give_raise(aumento);
 				}
-			}
 			default:
 				break;
 		}
