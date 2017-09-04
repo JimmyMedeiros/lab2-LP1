@@ -21,6 +21,12 @@ Company::~Company(){
 	/** TODO **/
 	total--;
 }
+Company::void give_raise(float tax){
+	for (std::vector<Employee*>::iterator it = .begin(); it != .end(); ++it)
+	{
+		it->wage *= (tax +1); 
+	}
+}
 std::istream &operator>> (std::istream &i, Company &c) {
 	std::cout << "Digite o CNPJ da empresa:\n";
 	i >> c.CNPJ;

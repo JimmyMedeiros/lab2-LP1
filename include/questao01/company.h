@@ -18,6 +18,7 @@ public:
 /** Methods **/
 	Company();
 	~Company();
+	give_raise(float tax);
 	/** Getters and Setters 
 	getName();
 	setName();**/
