@@ -2,13 +2,14 @@
 #define _EMPLOYEE_H
 
 #include <string>
+#include "../../include/questao01/date.h"
 
 class Employee
 {
 public:
 	std::string name;
-	std::string admission_date;
-	int CPF;
+	Date admission_date;
+	size_t CPF;
 	float wage;
 	static int total;
 /** Methods **/

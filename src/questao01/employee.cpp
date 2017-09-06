@@ -5,6 +5,7 @@
 #include <string>
 
 #include "../../include/questao01/employee.h"
+#include "../../include/questao01/date.h"
 
 int Employee::total = 0;
 
@@ -21,7 +22,8 @@ Employee::~Employee(){
 	/** TODO **/
 	total--;
 }
-std::istream &operator>> (std::istream &i, Employee &e) {
+std::istream & operator>> (std::istream & i, Employee & e) {
+	//int d, m, y;
 	std::cout << "Digite o nome do funcionário:\n";
 	i >> e.name;
 	std::cout << "Digite o CPF do funcionário:\n";
@@ -32,7 +34,7 @@ std::istream &operator>> (std::istream &i, Employee &e) {
 	i >> e.wage;
 	return i;
 }
-std::ostream& operator<< (std::ostream &o, Employee &e){
+std::ostream & operator<< (std::ostream & o, Employee & e){
 	o << "Nome: " << e.name;
 	o << "\nCPF: " << e.CPF;
 	o << "\nData de admissão: " << e.admission_date;

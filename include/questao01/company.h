@@ -12,7 +12,7 @@ class Company
 private:
 	int ID;
 public:
-	int CNPJ;
+	size_t CNPJ;
 	std::string name;
 	static int total;
 	std::vector<Employee*> employees;
