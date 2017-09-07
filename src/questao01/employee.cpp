@@ -38,6 +38,6 @@ std::ostream & operator<< (std::ostream & o, Employee & e){
 	o << "Nome: " << e.name;
 	o << "\nCPF: " << e.CPF;
 	o << "\nData de admissão: " << e.admission_date;
-	o << "\nSalário: " << e.wage << "\n";
+	o << "Salário: " << e.wage << "\n";
 	return o;
 }

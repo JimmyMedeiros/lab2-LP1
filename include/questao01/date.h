@@ -19,13 +19,13 @@ public:
 	int getMonth();
 	int getDay();
 
-	void setYear();
-	void setMonth();
-	void setDay();
+	void setYear(int _year);
+	void setMonth(int _month);
+	void setDay(int _day)	;
 /** Operators **/
 	friend std::istream& operator>> (std::istream &i, Date &d);
 	friend std::ostream& operator<< (std::ostream &o, Date &d);
-	Date operator+ (Date &d);
+	//friend Date operator+ (Date &d);
 };
 
 #endif

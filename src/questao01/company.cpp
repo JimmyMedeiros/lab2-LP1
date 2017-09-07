@@ -15,11 +15,11 @@ int Company::total = 0;
 */
 Company::Company(){
 	/** TODO **/
+	this->ID = total;
 	total++;
 }
 Company::~Company(){
 	/** TODO **/
-	this->ID = total;
 	total--;
 }
 void Company::give_raise(float tax){

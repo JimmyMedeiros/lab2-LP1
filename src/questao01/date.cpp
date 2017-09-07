@@ -14,7 +14,7 @@
 Date::Date(){}
 
 Date::Date(int _day, int _month, int _year){
-	day = _day;
+	this->setDay(_day);
 	month = _month;
 	year = _year;
 }
@@ -33,19 +33,28 @@ void Date::setYear(int _year){
 	this->year = _year;
 }
 void Date::setMonth(int _month){
-	this->month = _month;
+	if (_month > 12)
+		this->month = _month;
+	else
+		std::cerr << "Valor inválido\n";
 }
 void Date::setDay(int _day){
-	this->day = _day;
+	if (_day < 30)
+		this->day = _day;
+	else
+		std::cerr << "Valor inválido\n";
 }
 
 /** Operadores **/
 std::istream &operator>> (std::istream &i, Date &d) {
-	std::cout << "Digite o dia:\n";
-	i >> d.day;
-	std::cout << "Digite o mês:\n";
-	i >> d.month;
-	std::cout << "Digite o ano:\n";
+	int day, m;
+	std::cout << "Dia: ";
+	i >> day;
+	d.setDay(day);
+	std::cout << "Mês: ";
+	i >> m;
+	d.setMonth(m);
+	std::cout << "Ano: ";
 	i >> d.year;
 	return i;
 }
@@ -53,10 +62,10 @@ std::ostream& operator<< (std::ostream &o, Date &d){
 	o << d.getDay() << " / " << d.getMonth() << " / " << d.getYear() << "\n";
 	return o;
 }
-Date Date::operator+ (Date &d) {
+/*Date Date::operator+ (Date &d) {
 	// TODO
 	y = year + d.getYear();
 	m = month + d.getMonth();
 	d = day + d.getDay();
 	return Date(d,m,y);
-}
+}*/

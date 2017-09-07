@@ -24,7 +24,7 @@ debug: CPPFLAGS += -g -O0
 debug: questao01 questao02
 
 ####	Questão 01		####
-questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/company.o $(OBJ_DIR)/employee.o
+questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/company.o $(OBJ_DIR)/employee.o $(OBJ_DIR)/date.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -32,13 +32,17 @@ questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/company.o $(OBJ_DIR)/employee.o
 	@echo "+++ [Executavel questao01 criado em $(BIN_DIR)] +++"
 	@echo "============="
 
+## Arquivos objeto
 $(OBJ_DIR)/main1.o: $(SRC_DIR)/questao01/main1.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 $(OBJ_DIR)/company.o: $(SRC_DIR)/questao01/company.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
-$(OBJ_DIR)/employee.o: $(SRC_DIR)/questao01/employee.cpp
+$(OBJ_DIR)/employee.o: $(SRC_DIR)/questao01/employee.cpp 
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+$(OBJ_DIR)/date.o: $(SRC_DIR)/questao01/date.cpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 ####	Questão 02		####
