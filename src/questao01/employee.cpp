@@ -25,7 +25,8 @@ Employee::~Employee(){
 std::istream & operator>> (std::istream & i, Employee & e) {
 	//int d, m, y;
 	std::cout << "Digite o nome do funcionário:\n";
-	i >> e.name;
+	i.ignore(1); // Ignora exatamente o caracter '\n'
+	std::getline (i, e.name);
 	std::cout << "Digite o CPF do funcionário:\n";
 	i >> e.CPF;
 	std::cout << "Digite a data de admissão:\n";

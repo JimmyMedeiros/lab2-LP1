@@ -9,19 +9,19 @@
 class Date
 {
 private:
-	int year, month, day;
+	size_t year, month, day;
 public:
 /** Methods **/
-	Date(int _day, int _month, int _year);
+	Date(size_t _day, size_t _month, size_t _year);
 	Date();
 /** Getters and Setters **/ 
-	int getYear();
-	int getMonth();
-	int getDay();
+	size_t getYear();
+	size_t getMonth();
+	size_t getDay();
 
-	void setYear(int _year);
-	void setMonth(int _month);
-	void setDay(int _day)	;
+	void setYear(size_t _year);
+	void setMonth(size_t _month);
+	void setDay(size_t _day)	;
 /** Operators **/
 	friend std::istream& operator>> (std::istream &i, Date &d);
 	friend std::ostream& operator<< (std::ostream &o, Date &d);

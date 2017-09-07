@@ -34,9 +34,10 @@ int Company::getID(){
 }
 /** Operadores **/
 std::istream &operator>> (std::istream &i, Company &c) {
+	std::cout << "Digite o nome da empresa:" << std::endl;
+	i.ignore(1); // Ignora exatamente o caracter '\n'
+	std::getline (i, c.name);
 	std::cout << "Digite o CNPJ da empresa:\n";
 	i >> c.CNPJ;
-	std::cout << "Digite o nome da empresa:\n";
-	i >> c.name;
 	return i;
 }

@@ -36,6 +36,15 @@ bool error_handler (char &option){
 
 	return false;
 }
+bool error_handler (){
+	if (not(std::cin)){
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits <streamsize> ::max(), '\n');
+		std::cerr << "\nValor inválido. Tente novamente.\n";
+		return true;
+	}
+	return false;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -61,10 +70,12 @@ int main(int argc, char const *argv[])
 		{
 			case 1:
 			{
-				cout << "==== Cadastrando empresa ====\n";
+				//std::cin.ignore(std::numeric_limits<std::streamsize>::max());
+				cout << "==== Cadastrando empresa ====" << endl;
 				Company *empresa = new Company();
 				cin >> (*empresa);
-				empresas.push_back(empresa);
+				if (not error_handler()) empresas.push_back(empresa);
+				else delete empresa;
 			}
 				break;
 			case 2:
@@ -90,7 +101,7 @@ int main(int argc, char const *argv[])
 					if (not error_handler(opt2))
 					{
 						cin >> (*empregado);
-						empresas.at(opt2)->employees.push_back(empregado);
+						if (not error_handler()) empresas.at(opt2)->employees.push_back(empregado);
 					}
 				}
 				break;

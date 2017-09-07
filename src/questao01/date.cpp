@@ -2,6 +2,7 @@
  * @file date.cpp
  */
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 #include "../../include/questao01/date.h"
@@ -13,32 +14,32 @@
 */
 Date::Date(){}
 
-Date::Date(int _day, int _month, int _year){
+Date::Date(size_t _day, size_t _month, size_t _year){
 	this->setDay(_day);
 	month = _month;
 	year = _year;
 }
 
 /** Getters and Setters **/
-int Date::getYear(){
+size_t Date::getYear(){
 	return this->year;
 }
-int Date::getMonth(){
+size_t Date::getMonth(){
 	return this->month;
 }
-int Date::getDay(){
+size_t Date::getDay(){
 	return this->day;
 }
-void Date::setYear(int _year){
+void Date::setYear(size_t _year){
 	this->year = _year;
 }
-void Date::setMonth(int _month){
-	if (_month > 12)
+void Date::setMonth(size_t _month){
+	if (_month <= 12)
 		this->month = _month;
 	else
 		std::cerr << "Valor inválido\n";
 }
-void Date::setDay(int _day){
+void Date::setDay(size_t _day){
 	if (_day < 30)
 		this->day = _day;
 	else
@@ -59,7 +60,7 @@ std::istream &operator>> (std::istream &i, Date &d) {
 	return i;
 }
 std::ostream& operator<< (std::ostream &o, Date &d){
-	o << d.getDay() << " / " << d.getMonth() << " / " << d.getYear() << "\n";
+	o << std::setw(2) << std::setfill('0') << d.getDay() << " / " << std::setw(2) << std::setfill('0') << d.getMonth() << " / " << d.getYear() << "\n";
 	return o;
 }
 /*Date Date::operator+ (Date &d) {
