@@ -74,7 +74,16 @@ int main(int argc, char const *argv[])
 				cout << "==== Cadastrando empresa ====" << endl;
 				Company *empresa = new Company();
 				cin >> (*empresa);
-				if (not error_handler()) empresas.push_back(empresa);
+				bool found = false;
+				for (std::vector<Company*>::iterator it2 = empresas.begin(); it2 != empresas.end(); ++it2)
+						{
+					if ((**it2) == (*empresa))
+					{
+						cerr << "Uma empresa com esse CNPJ já foi cadastrado.\n";
+						found = true;
+					}
+				}
+				if (not error_handler() and not found) empresas.push_back(empresa);
 				else delete empresa;
 			}
 				break;
@@ -101,7 +110,16 @@ int main(int argc, char const *argv[])
 					if (not error_handler(opt2))
 					{
 						cin >> (*empregado);
-						if (not error_handler()) empresas.at(opt2)->employees.push_back(empregado);
+						bool found = false;
+						for (std::vector<Employee*>::iterator it2 = empresas.at(opt2)->employees.begin(); it2 != empresas.at(opt2)->employees.end(); ++it2)
+						{
+							if ((**it2) == (*empregado))
+							{
+								cerr << "Um funcionário com esse CPF já foi cadastrado.\n";
+								found = true;
+							}
+						}
+						if (not error_handler() and not found) empresas.at(opt2)->employees.push_back(empregado);
 					}
 				}
 				break;
@@ -139,6 +157,30 @@ int main(int argc, char const *argv[])
 					cin >> aumento;
 					(empresas.at(opt2))->give_raise(aumento);
 				}
+				break;
+			case 5:
+				{
+					int j = 0;
+					int opt2;
+					cout << "Escolha qual empresa você quer listar os funcionários\n";
+					for (it = empresas.begin() ; it != empresas.end(); ++it)
+					{
+						cout << "(" << (empresas.at(j))->getID() << ")" << (empresas.at(j))->name << endl;
+						j++;
+					}
+					cin >> opt2;
+					cout << "= Lista de funcionários: " << endl;
+					vector<Employee*>::iterator it2 = (empresas.at(opt2))->employees.begin();
+					for (; it2 != empresas.at(opt2)->employees.end(); ++it2)
+					{
+						if ( true /* (*(*it2)).admission_date*/)
+						{
+							/* code */
+						}
+						cout << (*(*it2)) << endl;
+					}
+				}
+				break;
 			default:
 				break;
 		}

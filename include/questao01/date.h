@@ -25,7 +25,7 @@ public:
 /** Operators **/
 	friend std::istream& operator>> (std::istream &i, Date &d);
 	friend std::ostream& operator<< (std::ostream &o, Date &d);
-	//friend Date operator+ (Date &d);
+	//friend Date operator- (Date &d);
 };
 
 #endif

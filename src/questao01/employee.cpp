@@ -22,6 +22,9 @@ Employee::~Employee(){
 	/** TODO **/
 	total--;
 }
+
+/** Operators **/
+
 std::istream & operator>> (std::istream & i, Employee & e) {
 	//int d, m, y;
 	std::cout << "Digite o nome do funcionário:\n";
@@ -41,4 +44,12 @@ std::ostream & operator<< (std::ostream & o, Employee & e){
 	o << "\nData de admissão: " << e.admission_date;
 	o << "Salário: " << e.wage << "\n";
 	return o;
+}
+bool Employee::operator== (Employee const & e){
+	if (CPF == e.CPF){
+		return true;
+	}
+	else {
+		return false;
+	}
 }

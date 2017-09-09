@@ -26,6 +26,7 @@ public:
 	setName();**/
 /** Operators **/
 	friend std::istream& operator>> (std::istream &i, Company &c);
+	bool operator== (Company const & c);
 };
 
 #endif

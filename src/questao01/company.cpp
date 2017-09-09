@@ -41,3 +41,11 @@ std::istream &operator>> (std::istream &i, Company &c) {
 	i >> c.CNPJ;
 	return i;
 }
+bool Company::operator== (Company const & c){
+	if (CNPJ == c.CNPJ){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
