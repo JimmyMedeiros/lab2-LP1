@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "../../include/questao01/company.h"
+#include "company.h"
 
 int Company::total = 0;
 

@@ -4,8 +4,8 @@
 #include <typeinfo>
 #include <limits>
 
-#include "../../include/questao01/employee.h"
-#include "../../include/questao01/company.h"
+#include "employee.h"
+#include "company.h"
 using namespace std;
 
 /** 
@@ -173,11 +173,8 @@ int main(int argc, char const *argv[])
 					vector<Employee*>::iterator it2 = (empresas.at(opt2))->employees.begin();
 					for (; it2 != empresas.at(opt2)->employees.end(); ++it2)
 					{
-						if ( true /* (*(*it2)).admission_date*/)
-						{
-							/* code */
-						}
-						cout << (*(*it2)) << endl;
+						if ((*(*it2)).admission_date.countDays() < 90)
+							cout << (*(*it2)) << endl;
 					}
 				}
 				break;

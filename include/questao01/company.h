@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include <istream>
-#include "../../include/questao01/employee.h"
+#include "employee.h"
 
 class Company
 {

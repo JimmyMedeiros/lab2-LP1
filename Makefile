@@ -34,16 +34,16 @@ questao01: $(OBJ_DIR)/main1.o $(OBJ_DIR)/company.o $(OBJ_DIR)/employee.o $(OBJ_D
 
 ## Arquivos objeto
 $(OBJ_DIR)/main1.o: $(SRC_DIR)/questao01/main1.cpp
-	$(CC) -c $(CPPFLAGS) -o $@ $<
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
 
 $(OBJ_DIR)/company.o: $(SRC_DIR)/questao01/company.cpp
-	$(CC) -c $(CPPFLAGS) -o $@ $<
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
 
 $(OBJ_DIR)/employee.o: $(SRC_DIR)/questao01/employee.cpp 
-	$(CC) -c $(CPPFLAGS) -o $@ $<
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
 
 $(OBJ_DIR)/date.o: $(SRC_DIR)/questao01/date.cpp
-	$(CC) -c $(CPPFLAGS) -o $@ $<
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
 
 ####	Questão 02		####
 questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/dado.o

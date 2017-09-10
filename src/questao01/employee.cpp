@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-#include "../../include/questao01/employee.h"
-#include "../../include/questao01/date.h"
+#include "employee.h"
+#include "date.h"
 
 int Employee::total = 0;
 

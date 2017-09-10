@@ -14,6 +14,7 @@ public:
 /** Methods **/
 	Date(size_t _day, size_t _month, size_t _year);
 	Date();
+	int countDays();
 /** Getters and Setters **/ 
 	size_t getYear();
 	size_t getMonth();
