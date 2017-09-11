@@ -1,4 +1,4 @@
-#include "../../include/questao02/dado.h"
+#include "dado.h"
 
 #include <random>
 #include <ostream>

@@ -46,7 +46,7 @@ $(OBJ_DIR)/date.o: $(SRC_DIR)/questao01/date.cpp
 	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
 
 ####	Questão 02		####
-questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/dado.o
+questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/dado.o $(OBJ_DIR)/player.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -54,9 +54,11 @@ questao02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/dado.o
 	@echo "+++ [Executavel questao02 criado em $(BIN_DIR)] +++"
 	@echo "============="
 $(OBJ_DIR)/main2.o: $(SRC_DIR)/questao02/main2.cpp
-	$(CC) -c $(CPPFLAGS) -o $@ $<
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao02 -o $@ $<
 $(OBJ_DIR)/dado.o: $(SRC_DIR)/questao02/dado.cpp
-	$(CC) -c $(CPPFLAGS) -o $@ $<
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao02 -o $@ $<
+$(OBJ_DIR)/player.o: $(SRC_DIR)/questao02/player.cpp
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao02 -o $@ $<
 
 # Alvo (target) para a geração automatica de documentacao usando o Doxygen.
 # Sempre remove a documentacao anterior (caso exista) e gera uma nova.

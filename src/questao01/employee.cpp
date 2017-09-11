@@ -32,7 +32,7 @@ std::istream & operator>> (std::istream & i, Employee & e) {
 	std::getline (i, e.name);
 	std::cout << "Digite o CPF do funcionário:\n";
 	i >> e.CPF;
-	std::cout << "Digite a data de admissão:\n";
+	std::cout << "Digite a data de admissão ( na ordem: ano / mês / dia ) :\n";
 	i >> e.admission_date;
 	std::cout << "Digite o salário do funcionário:\n";
 	i >> e.wage;
